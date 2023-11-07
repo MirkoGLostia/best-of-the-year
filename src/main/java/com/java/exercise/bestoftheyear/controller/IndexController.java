@@ -23,12 +23,23 @@ public class IndexController {
     public String home(Model model) {
         String name = "Mirko";
         model.addAttribute("ownerName", name);
-        model.addAttribute("bestFilms", getBestMovies());
-        model.addAttribute("bestMusics", getBestSongs());
         return "home-page";
     }
 
+    @GetMapping("movies")
+    public String movieList(Model model) {
+        String name = "Mirko";
+        model.addAttribute("ownerName", name);
+        model.addAttribute("stringList", getBestMovies());
+        return "home-page";
+    }
 
-
+    @GetMapping("songs")
+    public String songList(Model model) {
+        String name = "Mirko";
+        model.addAttribute("ownerName", name);
+        model.addAttribute("stringList", getBestSongs());
+        return "home-page";
+    }
 
 }
