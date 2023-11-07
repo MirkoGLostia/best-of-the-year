@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping
 public class IndexController {
 
 
@@ -19,14 +19,14 @@ public class IndexController {
     }
 
 
-    @GetMapping("home")
+    @GetMapping("/")
     public String home(Model model) {
         String name = "Mirko";
         model.addAttribute("ownerName", name);
         return "home-page";
     }
 
-    @GetMapping("movies")
+    @GetMapping("/movies")
     public String movieList(Model model) {
         String name = "Mirko";
         model.addAttribute("ownerName", name);
@@ -34,7 +34,7 @@ public class IndexController {
         return "home-page";
     }
 
-    @GetMapping("songs")
+    @GetMapping("/songs")
     public String songList(Model model) {
         String name = "Mirko";
         model.addAttribute("ownerName", name);
