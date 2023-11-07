@@ -6,7 +6,22 @@
 </head>
 <body>
 
-<h1 th:text="${ownerName}"></h1>
+<h1>Best of the year by <span th:text="${ownerName}"></span></h1>
+
+<h3> Best films: </h3>
+<ul>
+    <li th:each="film: ${bestFilms}">
+        <span th:text="${film}"></span>
+    </li>
+</ul>
+
+
+<h3> Best songs: </h3>
+<ul>
+    <li th:each="song: ${bestMusics}">
+        <span th:text="${song}"></span>
+    </li>
+</ul>
 
 </body>
 </html>

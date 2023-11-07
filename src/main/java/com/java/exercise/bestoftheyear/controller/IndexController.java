@@ -9,10 +9,26 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/")
 public class IndexController {
 
+
+    private String[] getBestMovies() {
+        return new String[]{"film1", "film2", "film3", "film4", "film5"};
+    }
+
+    private String[] getBestSongs() {
+        return new String[]{"music1", "music2", "music3", "music4", "music5"};
+    }
+
+
     @GetMapping("home")
     public String home(Model model) {
         String name = "Mirko";
         model.addAttribute("ownerName", name);
+        model.addAttribute("bestFilms", getBestMovies());
+        model.addAttribute("bestMusics", getBestSongs());
         return "home-page";
     }
+
+
+
+
 }
