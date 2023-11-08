@@ -1,38 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Spring test</title>
+<head th:insert="~{/fragments/resources :: headResources(${pageTitle})}">
 </head>
 <body>
 
-<h1>Best of the year by <span th:text="${ownerName}"></span>:</h1>
-<div><span th:each="string: ${stringList}"><span th:text="|${string.getTitle()}, |"></span></span></div>
-<ul>
-    <li th:each="string: ${stringList}">
-        <a th:href="@{|/${pageSector}/${string.id}|}">
-        <span th:text="${string.getId() + '-' + string.getTitle()}"></span>
-        </a>
-    </li>
-</ul>
 
-<button>
-    <a href="http://localhost:8080">
-        home
-    </a>
-</button>
+<div class="container">
+    <nav th:replace="~{/fragments/navbar :: topNavbar(${pageTitle})}"></nav>
 
-<button>
-    <a href="http://localhost:8080/songs">
-        songs
-    </a>
-</button>
+    <h1>Best of the year by <span th:text="${ownerName}"></span>:</h1>
 
-<button>
-    <a href="http://localhost:8080/movies">
-        movies
-    </a>
-</button>
+    <ul>
+        <li th:each="string: ${stringList}">
+            <a th:href="@{|/${pageTitle}/${string.id}|}">
+                <span th:text="${string.getId() + '-' + string.getTitle()}"></span>
+            </a>
+        </li>
+    </ul>
+</div>
+
 
 </body>
 </html>

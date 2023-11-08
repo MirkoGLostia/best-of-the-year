@@ -31,6 +31,8 @@ public class IndexController {
     @GetMapping("/")
     public String home(Model model) {
         String name = "Mirko";
+        String pageTitle = "home";
+        model.addAttribute("pageTitle", pageTitle);
         model.addAttribute("ownerName", name);
         return "home-page";
     }
@@ -38,8 +40,8 @@ public class IndexController {
     @GetMapping("/movies")
     public String movieList(Model model) {
         String name = "Mirko";
-        String pageSector = "movies";
-        model.addAttribute("pageSector", pageSector);
+        String pageTitle = "movies";
+        model.addAttribute("pageTitle", pageTitle);
         model.addAttribute("ownerName", name);
         model.addAttribute("stringList", getMoviesList());
         return "home-page";
@@ -48,8 +50,8 @@ public class IndexController {
     @GetMapping("/songs")
     public String songList(Model model) {
         String name = "Mirko";
-        String pageSector = "songs";
-        model.addAttribute("pageSector", pageSector);
+        String pageTitle = "songs";
+        model.addAttribute("pageTitle", pageTitle);
         model.addAttribute("ownerName", name);
         model.addAttribute("stringList", getSongsList());
         return "home-page";
@@ -58,6 +60,8 @@ public class IndexController {
     @GetMapping("/movies/{id}")
     public String movieDetail(@PathVariable("id") int movieId, Model model) {
         Movie movie = getMovieById(movieId);
+        String pageTitle = "detail movie";
+        model.addAttribute("pageTitle", pageTitle);
         model.addAttribute("detail", movie);
         return "details-page";
     }
@@ -65,6 +69,8 @@ public class IndexController {
     @GetMapping("/songs/{id}")
     public String songDetail(@PathVariable("id") int songId, Model model) {
         Song song = getSongById(songId);
+        String pageTitle = "detail songs";
+        model.addAttribute("pageTitle", pageTitle);
         model.addAttribute("detail", song);
         return "details-page";
     }
