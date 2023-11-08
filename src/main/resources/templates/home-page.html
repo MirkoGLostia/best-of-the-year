@@ -10,7 +10,9 @@
 <div><span th:each="string: ${stringList}"><span th:text="|${string.getTitle()}, |"></span></span></div>
 <ul>
     <li th:each="string: ${stringList}">
+        <a th:href="@{|/${pageSector}/${string.id}|}">
         <span th:text="${string.getId() + '-' + string.getTitle()}"></span>
+        </a>
     </li>
 </ul>
 
