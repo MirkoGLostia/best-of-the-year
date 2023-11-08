@@ -1,0 +1,23 @@
+Ciao!
+Continuiamo a lavorare sul nostro progetto Best of the year (anche stessa repo).
+Step 1
+Creare le classi Movie e Song aventi almeno :
+- un id
+- un titolo
+Modificare i metodi getMovies()  e getSongs() per fare in modo che restituiscano una lista di Movie o di Song.
+Modificare i metodi che rispondono agli url
+- “/movies”
+- “/songs”
+in modo che i Model restituiscano una lista di oggetti (Movie o Song) invece di una stringa.
+Modificare anche le rispettive view.
+Step 2
+Creare due metodi
+- “/movies/{id}”
+- “/songs/{id}”
+che dato il parametro id passato tramite il path, mostri in pagina il titolo relativo al film / canzone. Se la classe Movie e Song hanno altri attributi (ad es. descrizione, autore, ecc..) mostrare in pagina tutti questi valori.
+Step 3
+Includere Bootstrap e fare il refactoring del layout come da esempio allegato, cercando di creare componenti riutilizzabili con i fragments.
+Ogni elemento mostrato nella lista (film o canzone) deve essere un link che punta alla rispettiva pagina di dettaglio.
+Nella pagina home (quella che risponde alla root dell’applicazione) aggiungere due link che portano agli url /movies e /songs. Nelle pagine con le liste aggiungere un link che riporta alla home page.
+Testare navigando l’applicazione.
+Buon lavoro!
