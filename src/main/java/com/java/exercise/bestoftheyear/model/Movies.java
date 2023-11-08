@@ -16,11 +16,11 @@ public class Movies {
         this.titleMovie = titleMovie;
     }
 
-    public int getIdMovie() {
+    public int getId() {
         return idMovie;
     }
 
-    public String getTitleMovie() {
+    public String getTitle() {
         return titleMovie;
     }
 }

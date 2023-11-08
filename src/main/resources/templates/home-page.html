@@ -7,10 +7,10 @@
 <body>
 
 <h1>Best of the year by <span th:text="${ownerName}"></span>:</h1>
-<div><span th:each="string: ${stringList}"><span th:text="|${string}, |"></span></span></div>
+<div><span th:each="string: ${stringList}"><span th:text="|${string.getTitle()}, |"></span></span></div>
 <ul>
     <li th:each="string: ${stringList}">
-        <span th:text="${string}"></span>
+        <span th:text="${string.getId() + '-' + string.getTitle()}"></span>
     </li>
 </ul>
 

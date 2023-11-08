@@ -16,11 +16,11 @@ public class Songs {
         this.titleSong = titleSong;
     }
 
-    public int getIdSong() {
+    public int getId() {
         return idSong;
     }
 
-    public String getTitleSong() {
+    public String getTitle() {
         return titleSong;
     }
 }
